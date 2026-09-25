@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>image optimizer — offline</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    font-family: ui-monospace, monospace;
+    background: #101418; color: #d7dde3;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 20px; margin: 0; gap: 12px;
+  }
+  h1 { font-size: 18px; margin: 0; }
+  #drop {
+    width: 560px; min-height: 80px; border: 2px dashed #2c343c;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: #7a848e; padding: 10px; text-align: center;
+  }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  select, input[type="text"] {
+    font: inherit; background: #1b2129; color: #d7dde3;
+    border: 1px solid #2c343c; padding: 4px 8px;
+  }
+  input[type="range"] { width: 160px; }
+  button {
+    font: inherit; background: #1b2129; color: #d7dde3;
+    border: 1px solid #2c343c; padding: 5px 10px; cursor: pointer;
+  }
+  .job {
+    width: 560px; display: flex; gap: 10px; align-items: center;
+    background: #1b2129; border: 1px solid #2c343c; padding: 8px;
+  }
+  .job strong { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+  .job span { color: #7fdc9c; }
+  .job a { color: #4d9de0; }
+  #summary { min-height: 18px; color: #ffd166; }
+</style>
+</head>
+<body>
+  <h1>image optimizer <small>(offline — files never leave your machine)</small></h1>
+  <div id="drop">drop images here, or click to pick files<br>png / jpeg / webp</div>
+  <div class="controls">
+    <label>format
+      <select id="format">
+        <option value="webp">webp</option>
+        <option value="jpeg">jpeg</option>
+        <option value="png">png</option>
+      </select>
+    </label>
+    <label>quality <input id="quality" type="range" min="5" max="95" value="70"> <span id="quality-value">70%</span></label>
+    <label>resize <input id="resize" type="text" placeholder="50% / 800x600 / 800" size="10"></label>
+    <button id="optimize">optimize all</button>
+    <button id="clear">clear</button>
+  </div>
+  <div id="summary">add images, pick settings, hit optimize</div>
+  <div id="queue"></div>
+<script type="module">
+/*__APP__*/
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "image-optimizer",
+  "version": "1.0.0",
+  "description": "In-browser image optimizer: batch compression, quality slider, resize, before/after size comparison — files never leave the machine",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/",
+    "build": "node build.ts"
+  }
+}
